@@ -1,11 +1,10 @@
 package br.com.ganheCom.core;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
 
 import java.util.concurrent.TimeUnit;
 
@@ -13,9 +12,9 @@ public class DriveFactory {
 
     @BeforeMethod
     public WebDriver setUp(){
-        ChromeOptions options = new ChromeOptions();
-//        options.setHeadless(true);
-        WebDriver driver = new ChromeDriver(options);
+        FirefoxOptions options = new FirefoxOptions();
+        options.setHeadless(true);
+        WebDriver driver = new FirefoxDriver(options);
         driver.manage().window().maximize();
         driver.get("https://ganhecom.app/looks/");
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);

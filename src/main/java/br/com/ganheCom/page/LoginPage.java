@@ -43,6 +43,7 @@ public class LoginPage {
     public void clicaSimGostei() {
         for (int i = 0; i < 50; i++) {
             btnSimGostei.click();
+            esperaCarregar();
         }
     }
 
