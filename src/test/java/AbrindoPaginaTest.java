@@ -27,25 +27,25 @@ public class AbrindoPaginaTest {
        driveFactory.tearDown(driver);
     }
 
-//    @RepeatedTest(1)
-//    void test_1_realizaLoginGmail() throws InterruptedException {
-//        loginPage.realizarLogin("jeanheberth19@gmail.com", "Paoeovo12#$");
-//        loginPage.clicaSimGostei();
-//        saquePage.clicarBtnSaquedoTopo();
-//        saquePage.digitaValorTxtValor("5000.00");
-//        saquePage.digitaChavePix("jeanheberth19@gmail.com");
-//        saquePage.clicarBtnSaqueCarteira();
-//    }
-//
-//    @RepeatedTest(1)
-//    void test_2_realizaLoginHotMail() {
-//        loginPage.realizarLogin("jean-hv@hotmail.com", "Paoeovo12,#$");
-//        loginPage.clicaSimGostei();
-//        saquePage.clicarBtnSaquedoTopo();
-//        saquePage.digitaValorTxtValor("5000.00");
-//        saquePage.digitaChavePix("jeanheberth19@gmail.com");
-//        saquePage.clicarBtnSaqueCarteira();
-//    }
+    @RepeatedTest(1)
+    void test_1_realizaLoginGmail() throws InterruptedException {
+        loginPage.realizarLogin("jeanheberth19@gmail.com", "Paoeovo12#$");
+        loginPage.clicaSimGostei();
+        saquePage.clicarBtnSaquedoTopo();
+        saquePage.digitaValorTxtValor("5000.00");
+        saquePage.digitaChavePix("jeanheberth19@gmail.com");
+        saquePage.clicarBtnSaqueCarteira();
+    }
+
+    @RepeatedTest(1)
+    void test_2_realizaLoginHotMail() {
+        loginPage.realizarLogin("jean-hv@hotmail.com", "Paoeovo12,#$");
+        loginPage.clicaSimGostei();
+        saquePage.clicarBtnSaquedoTopo();
+        saquePage.digitaValorTxtValor("5000.00");
+        saquePage.digitaChavePix("jeanheberth19@gmail.com");
+        saquePage.clicarBtnSaqueCarteira();
+    }
 
     @RepeatedTest(100)
     public void test_3_saqueGmail() {
