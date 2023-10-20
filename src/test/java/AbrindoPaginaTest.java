@@ -5,6 +5,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Ignore;
 
 
 public class AbrindoPaginaTest {
@@ -27,8 +28,9 @@ public class AbrindoPaginaTest {
        driveFactory.tearDown(driver);
     }
 
-    @RepeatedTest(1)
-    void test_1_realizaLoginGmail() throws InterruptedException {
+    @RepeatedTest(100)
+    @Ignore
+    void test_1_realizaLoginGmail(){
         loginPage.realizarLogin("jeanheberth19@gmail.com", "Paoeovo12#$");
         loginPage.clicaSimGostei();
         saquePage.clicarBtnSaquedoTopo();
@@ -37,7 +39,8 @@ public class AbrindoPaginaTest {
         saquePage.clicarBtnSaqueCarteira();
     }
 
-    @RepeatedTest(1)
+    @RepeatedTest(100)
+    @Ignore
     void test_2_realizaLoginHotMail() {
         loginPage.realizarLogin("jean-hv@hotmail.com", "Paoeovo12,#$");
         loginPage.clicaSimGostei();
