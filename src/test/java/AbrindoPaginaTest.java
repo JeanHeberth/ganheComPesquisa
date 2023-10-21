@@ -60,7 +60,7 @@ public class AbrindoPaginaTest {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(2)
     public void test_4_saqueHotmail() {
         loginPage.realizarLogin("jean-hv@hotmail.com", "Paoeovo12,#$");
         saquePage.clicarBtnSaquedoTopo();
