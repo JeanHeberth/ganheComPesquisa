@@ -31,7 +31,6 @@ public class AbrindoPaginaTest {
     @RepeatedTest(100)
     @Ignore
     void test_1_realizaLoginGmail(){
-        loginPage.realizarLogin("jeanheberth19@gmail.com", "Paoeovo12#$");
         loginPage.clicaSimGostei();
         saquePage.clicarBtnSaquedoTopo();
         saquePage.digitaValorTxtValor("5000.00");
@@ -42,7 +41,6 @@ public class AbrindoPaginaTest {
     @RepeatedTest(100)
     @Ignore
     void test_2_realizaLoginHotMail() {
-        loginPage.realizarLogin("jean-hv@hotmail.com", "Paoeovo12,#$");
         loginPage.clicaSimGostei();
         saquePage.clicarBtnSaquedoTopo();
         saquePage.digitaValorTxtValor("5000.00");
@@ -52,7 +50,6 @@ public class AbrindoPaginaTest {
 
     @RepeatedTest(100)
     public void test_3_saqueGmail() {
-        loginPage.realizarLogin("jeanheberth19@gmail.com", "Paoeovo12#$");
         saquePage.clicarBtnSaquedoTopo();
         saquePage.digitaValorTxtValor("5000.00");
         saquePage.digitaChavePix("jeanheberth19@gmail.com");
@@ -62,7 +59,6 @@ public class AbrindoPaginaTest {
 
     @RepeatedTest(2)
     public void test_4_saqueHotmail() {
-        loginPage.realizarLogin("jean-hv@hotmail.com", "Paoeovo12,#$");
         saquePage.clicarBtnSaquedoTopo();
         saquePage.digitaValorTxtValor("5000.00");
         saquePage.digitaChavePix("jeanheberth19@gmail.com");
