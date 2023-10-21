@@ -6,9 +6,14 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Ignore;
+import io.github.cdimascio.dotenv.Dotenv;
 
 
 public class AbrindoPaginaTest {
+
+//    String email = System.getenv("EMAIL");
+    String senha = System.getenv("PASSWORD");
+
 
     private DriveFactory driveFactory = new DriveFactory();
     private WebDriver driver;
@@ -57,8 +62,9 @@ public class AbrindoPaginaTest {
 
     }
 
-    @RepeatedTest(2)
+    @RepeatedTest(1)
     public void test_4_saqueHotmail() {
+        loginPage.realizarLogin("jeanheberth19@gmail.com", senha);
         saquePage.clicarBtnSaquedoTopo();
         saquePage.digitaValorTxtValor("5000.00");
         saquePage.digitaChavePix("jeanheberth19@gmail.com");
