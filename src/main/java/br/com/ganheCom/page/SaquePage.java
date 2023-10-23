@@ -62,7 +62,7 @@ public class SaquePage {
     }
 
     public void esperaCarregar() {
-        WebDriverWait wait = new WebDriverWait(driver, ofSeconds(3));
+        WebDriverWait wait = new WebDriverWait(driver, ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".btn-block:nth-child(1)")));
     }
 }

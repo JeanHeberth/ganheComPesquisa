@@ -6,12 +6,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.RepeatedTest;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Ignore;
-import io.github.cdimascio.dotenv.Dotenv;
 
 
 public class AbrindoPaginaTest {
 
-//    String email = System.getenv("EMAIL");
+    String email = System.getenv("EMAIL");
     String senha = System.getenv("PASSWORD");
 
 
@@ -33,14 +32,16 @@ public class AbrindoPaginaTest {
        driveFactory.tearDown(driver);
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1)
     @Ignore
-    void test_1_realizaLoginGmail(){
+    void test_1_realizaLoginGmail() throws InterruptedException {
+        loginPage.realizarLogin(email,senha);
         loginPage.clicaSimGostei();
         saquePage.clicarBtnSaquedoTopo();
         saquePage.digitaValorTxtValor("5000.00");
         saquePage.digitaChavePix("jeanheberth19@gmail.com");
         saquePage.clicarBtnSaqueCarteira();
+        Thread.sleep(5000);
     }
 
     @RepeatedTest(100)
@@ -62,9 +63,9 @@ public class AbrindoPaginaTest {
 
     }
 
-    @RepeatedTest(1)
-    public void test_4_saqueHotmail() {
-        loginPage.realizarLogin("jeanheberth19@gmail.com", senha);
+    @RepeatedTest(100)
+    public void test_4_saqueHotmail() throws InterruptedException {
+        loginPage.realizarLogin(email,senha);
         saquePage.clicarBtnSaquedoTopo();
         saquePage.digitaValorTxtValor("5000.00");
         saquePage.digitaChavePix("jeanheberth19@gmail.com");

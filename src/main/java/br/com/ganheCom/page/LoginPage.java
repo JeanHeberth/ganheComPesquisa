@@ -14,7 +14,6 @@ public class LoginPage {
 
     private WebDriver driver;
 
-
     @FindBy(xpath = "//a[contains(@href,'login.php')]")
     private WebElement btnFazerLogin;
 
@@ -33,22 +32,22 @@ public class LoginPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void realizarLogin(String usuario, String senha) {
+    public void realizarLogin(String nome, String senha) {
         btnFazerLogin.click();
-        txtEmail.sendKeys(usuario);
+        txtEmail.sendKeys(nome);
         txtSenha.sendKeys(senha);
         btnLogar.click();
     }
 
     public void clicaSimGostei() {
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 10; i++) {
             btnSimGostei.click();
             esperaCarregar();
         }
     }
 
     public void esperaCarregar() {
-        WebDriverWait wait = new WebDriverWait(driver, ofSeconds(3));
+        WebDriverWait wait = new WebDriverWait(driver, ofSeconds(10));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("button_like")));
     }
 }
