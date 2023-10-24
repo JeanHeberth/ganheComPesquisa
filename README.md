@@ -1,2 +1,3 @@
 # ganheComPesquisa
-[![Java CI with Gradle](https://github.com/JeanHeberth/payapp/actions/workflows/gradle.yml/badge.svg)](https://github.com/JeanHeberth/payapp/actions/workflows/gradle.yml)
+
+[![Java CI with Maven](https://github.com/JeanHeberth/ganheComPesquisa/actions/workflows/maven.yml/badge.svg)](https://github.com/JeanHeberth/ganheComPesquisa/actions/workflows/maven.yml)
