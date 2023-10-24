@@ -14,8 +14,8 @@ public class DriveFactory {
      @BeforeMethod
      public WebDriver setUp(){
          ChromeOptions options = new ChromeOptions();
-         options.addArguments("--headless");
-         driver = new ChromeDriver(options);
+        //  options.addArguments("--headless");
+          driver = new ChromeDriver(options);
          driver.manage().window().maximize();
          driver.get("https://ganhecom.app/looks/");
          driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);

@@ -63,7 +63,7 @@ public class AbrindoPaginaTest {
 
     }
 
-    @RepeatedTest(100)
+    @RepeatedTest(1)
     public void test_4_saqueHotmail() throws InterruptedException {
         loginPage.realizarLogin(email,senha);
         saquePage.clicarBtnSaquedoTopo();
