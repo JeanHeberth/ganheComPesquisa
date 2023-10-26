@@ -43,16 +43,16 @@ public class AbrindoPaginaTest {
         saquePage.clicarBtnSaqueCarteira();
     }
 
-    @RepeatedTest(1)
-    @Ignore
-    void test_2_realizaLoginHotMail() {
-        loginPage.realizarLogin(email,senha);
-        loginPage.clicaSimGostei();
-        saquePage.clicarBtnSaquedoTopo();
-        saquePage.digitaValorTxtValor("5000.00");
-        saquePage.digitaChavePix("jeanheberth19@gmail.com");
-        saquePage.clicarBtnSaqueCarteira();
-    }
+//    @RepeatedTest(1)
+//    @Ignore
+//    void test_2_realizaLoginHotMail() {
+//        loginPage.realizarLogin(email,senha);
+//        loginPage.clicaSimGostei();
+//        saquePage.clicarBtnSaquedoTopo();
+//        saquePage.digitaValorTxtValor("5000.00");
+//        saquePage.digitaChavePix("jeanheberth19@gmail.com");
+//        saquePage.clicarBtnSaqueCarteira();
+//    }
 
     @RepeatedTest(10)
     public void test_3_saqueGmail() {
