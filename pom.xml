@@ -16,7 +16,6 @@
         <junit.maven.surefire.plugin.version>2.19.1</junit.maven.surefire.plugin.version>
         <junit.platform.commons.version>1.6.2</junit.platform.commons.version>
         <junit.platform.surefire.provider.version>1.1.0</junit.platform.surefire.provider.version>
-        <maven.compiler.plugin.version>3.8.1</maven.compiler.plugin.version>
         <mockito.core.version>2.24.0</mockito.core.version>
         <mockito.junit.jupiter.vesion>3.3.0</mockito.junit.jupiter.vesion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -141,18 +140,7 @@
                     <check />
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring.maven.plugin.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
+
         </plugins>
     </build>
 
