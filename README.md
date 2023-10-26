@@ -1,3 +1,5 @@
 # ganheComPesquisa
 
-[![Java CI with Maven](https://github.com/JeanHeberth/ganheComPesquisa/actions/workflows/maven.yml/badge.svg)](https://github.com/JeanHeberth/ganheComPesquisa/actions/workflows/maven.yml)
+[![Java CI with Maven](https://github.com/JeanHeberth/ganheComPesquisa/actions/workflows/maven.yml/badge.svg)]
+
+[![allure](https://github.com/JeanHeberth/ganheComPesquisa/actions/workflows/allure.yml/badge.svg)](https://github.com/JeanHeberth/ganheComPesquisa/actions/workflows/allure.yml)
