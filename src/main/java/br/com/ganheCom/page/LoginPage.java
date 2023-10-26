@@ -40,14 +40,14 @@ public class LoginPage {
     }
 
     public void clicaSimGostei() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 50; i++) {
             btnSimGostei.click();
-            esperaCarregar();
+//            esperaCarregar();
         }
     }
 
     public void esperaCarregar() {
-        WebDriverWait wait = new WebDriverWait(driver, ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver, ofSeconds(60));
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("button_like")));
     }
 }

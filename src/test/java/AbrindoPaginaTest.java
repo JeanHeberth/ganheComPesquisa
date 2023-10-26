@@ -34,28 +34,29 @@ public class AbrindoPaginaTest {
 
     @RepeatedTest(1)
     @Ignore
-    void test_1_realizaLoginGmail() throws InterruptedException {
+    void test_1_realizaLoginGmail(){
         loginPage.realizarLogin(email,senha);
         loginPage.clicaSimGostei();
         saquePage.clicarBtnSaquedoTopo();
         saquePage.digitaValorTxtValor("5000.00");
         saquePage.digitaChavePix("jeanheberth19@gmail.com");
         saquePage.clicarBtnSaqueCarteira();
-        Thread.sleep(5000);
     }
 
-    @RepeatedTest(100)
-    @Ignore
-    void test_2_realizaLoginHotMail() {
-        loginPage.clicaSimGostei();
-        saquePage.clicarBtnSaquedoTopo();
-        saquePage.digitaValorTxtValor("5000.00");
-        saquePage.digitaChavePix("jeanheberth19@gmail.com");
-        saquePage.clicarBtnSaqueCarteira();
-    }
+//    @RepeatedTest(1)
+//    @Ignore
+//    void test_2_realizaLoginHotMail() {
+//        loginPage.realizarLogin(email,senha);
+//        loginPage.clicaSimGostei();
+//        saquePage.clicarBtnSaquedoTopo();
+//        saquePage.digitaValorTxtValor("5000.00");
+//        saquePage.digitaChavePix("jeanheberth19@gmail.com");
+//        saquePage.clicarBtnSaqueCarteira();
+//    }
 
-    @RepeatedTest(100)
+    @RepeatedTest(10)
     public void test_3_saqueGmail() {
+        loginPage.realizarLogin(email,senha);
         saquePage.clicarBtnSaquedoTopo();
         saquePage.digitaValorTxtValor("5000.00");
         saquePage.digitaChavePix("jeanheberth19@gmail.com");
@@ -64,7 +65,7 @@ public class AbrindoPaginaTest {
     }
 
     @RepeatedTest(1)
-    public void test_4_saqueHotmail() throws InterruptedException {
+    public void test_4_saqueHotmail() {
         loginPage.realizarLogin(email,senha);
         saquePage.clicarBtnSaquedoTopo();
         saquePage.digitaValorTxtValor("5000.00");
