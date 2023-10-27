@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="/Users/jeanheberthsouzavieira/Documents/CloneGitHub/ganheComPesquisa/src/test/java/br/com/ganheCom"><classes><class name="br.com.ganheCom.AbrindoPaginaTest"><methods><include name="test_1_realizaLoginGmail"/><include name="test_2_realizaLoginHotMail"/><include name="test_3_saqueGmail"/><include name="test_4_saqueHotmail"/></methods></class></classes></test></suite>
