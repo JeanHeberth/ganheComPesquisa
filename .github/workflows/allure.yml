@@ -32,7 +32,7 @@ jobs:
           allure_results: build/allure-results
 
       - name: Publish test report
-        uses: peaceiris/actions-configurando-allure@v3
+        uses: peaceiris/configurando-allure@v3
         if: always()
         with:
           github_token: $
