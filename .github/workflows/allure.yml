@@ -1,40 +1,70 @@
-name: Run tests and publish report
-on: [push]
-jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
+name: allure
 
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
+on:
+  push:
+    branches-ignore:
+      - '!master'
+jobs:
+  autotests:
+    name: Run tests and generate Allure Report
+    runs-on: Ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/cache@v1
         with:
-          distribution: corretto
+          path: |
+            ~/.m2/repository
+          key: ${{ runner.os }}-${{ github.workflow }}-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-${{ github.workflow }}-
+      - name: Set up JDK
+        uses: actions/setup-java@v1
+        with:
           java-version: 17
 
-      - name: Run tests
-        run: ./gradlew clean test
+      - name: Install dependencies
+        run: mvn dependency:go-offline compile compiler:testCompile
 
-      - name: Load test report history
-        uses: actions/checkout@v3
+      - name: Run Test
+        if: always()
+        run: mvn package
+        continue-on-error: true
+
+      - name: Get Allure history
+        uses: actions/checkout@v2
         if: always()
         continue-on-error: true
         with:
-          ref: main
-          path: main
+          ref: gh-pages
+          path: gh-pages
 
-      - name: Build test report
-        uses: simple-elf/allure-report-action@v1.7
+      - name: Allure Report action from marketplace
+        uses: simple-elf/allure-report-action@master
         if: always()
+        id: allure-report
         with:
-          gh_pages: main
+          allure_results: target/allure-results
+          gh_pages: gh-pages
+          allure_report: allure-report
           allure_history: allure-history
-          allure_results: build/allure-results
 
-      - name: Publish test report
-        uses: peaceiris/main@v3
+      - name: Deploy report to Github Pages
         if: always()
+        uses: peaceiris/actions-gh-pages@v2
+        env:
+          PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PUBLISH_BRANCH: gh-pages
+          PUBLISH_DIR: allure-history
+
+      - name: Cobertura
+        if: always()
+        run: mvn cobertura:cobertura
+        continue-on-error: true
+
+      - uses: codecov/codecov-action@v1
         with:
-          github_token: $
-          publish_branch: main
-          publish_dir: allure-history
+          token: ${{ secrets.CODECOV_TOKEN }}
+          flags: unittests # optional
+          name: codecov-umbrella # optional
+          fail_ci_if_error: false # optional (default = false)
