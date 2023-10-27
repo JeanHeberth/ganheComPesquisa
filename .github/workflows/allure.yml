@@ -20,21 +20,21 @@ jobs:
         if: always()
         continue-on-error: true
         with:
-          ref: configurando-allure
-          path: configurando-allure
+          ref: main
+          path: main
 
       - name: Build test report
         uses: simple-elf/allure-report-action@v1.7
         if: always()
         with:
-          gh_pages: configurando-allure
+          gh_pages: main
           allure_history: allure-history
           allure_results: build/allure-results
 
       - name: Publish test report
-        uses: peaceiris/configurando-allure@v3
+        uses: peaceiris/main@v3
         if: always()
         with:
           github_token: $
-          publish_branch: configurando-allure
+          publish_branch: main
           publish_dir: allure-history
