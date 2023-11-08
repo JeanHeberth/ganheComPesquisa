@@ -26,6 +26,6 @@ public class DriveFactory {
     @AfterMethod
     public void tearDown(WebDriver driver) {
         driver.manage().deleteAllCookies();
-        driver.close();
+        driver.quit();
     }
 }
